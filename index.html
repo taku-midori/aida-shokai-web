@@ -446,51 +446,6 @@
       color: var(--text-light);
     }
 
-    /* ===== お知らせ ===== */
-    #news {
-      background: var(--white);
-    }
-
-    .news-list {
-      border-top: 1px solid #e5e5e5;
-    }
-
-    .news-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 24px;
-      padding: 22px 0;
-      border-bottom: 1px solid #e5e5e5;
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .news-item:hover .news-title {
-      color: var(--accent);
-      text-decoration: underline;
-    }
-
-    .news-date {
-      font-size: 0.9rem;
-      color: var(--text-light);
-      white-space: nowrap;
-      min-width: 100px;
-    }
-
-    .news-badge {
-      display: inline-block;
-      padding: 2px 10px;
-      background: var(--accent);
-      color: var(--white);
-      font-size: 0.75rem;
-      border-radius: 3px;
-      white-space: nowrap;
-    }
-
-    .news-title {
-      font-size: 0.97rem;
-    }
-
     /* ===== お問い合わせ ===== */
     #contact {
       background: linear-gradient(135deg, #1e2540, #36416b);
@@ -501,104 +456,66 @@
     #contact .section-title { color: var(--white); }
     #contact .section-desc  { color: rgba(255,255,255,0.75); }
 
-    .contact-layout {
-      display: grid;
-      grid-template-columns: 1fr 1.5fr;
-      gap: 56px;
-      align-items: start;
+    .contact-content {
+      max-width: 640px;
+      margin: 0 auto;
+      text-align: center;
     }
 
-    .contact-info h3 {
-      font-size: 1.1rem;
-      margin-bottom: 20px;
-      color: rgba(255,255,255,0.9);
+    .contact-phone-box {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 16px;
+      padding: 48px 32px;
+      margin-bottom: 40px;
     }
 
-    .contact-info dl {
+    .contact-phone-label {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 12px;
+    }
+
+    .contact-phone-number {
+      display: inline-block;
+      font-size: clamp(2.2rem, 6vw, 3.2rem);
+      font-weight: 700;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    .contact-phone-number::before {
+      content: '📞 ';
+    }
+
+    .contact-phone-number:hover {
+      color: #a8e080;
+    }
+
+    .contact-phone-hours {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.6);
+      margin-top: 16px;
+    }
+
+    .contact-sub-info {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
       font-size: 0.95rem;
     }
 
-    .contact-info dt {
+    .contact-sub-info dt {
       font-size: 0.8rem;
       color: rgba(255,255,255,0.55);
-      margin-top: 16px;
-      margin-bottom: 2px;
+      margin-bottom: 4px;
     }
 
-    .contact-info dd {
+    .contact-sub-info dd {
       color: rgba(255,255,255,0.9);
-    }
-
-    .contact-info dd a {
-      color: #8eb8ff;
-      text-decoration: none;
-    }
-
-    .contact-box {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 12px;
-      padding: 40px;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    label {
-      display: block;
-      font-size: 0.9rem;
-      margin-bottom: 8px;
-      color: rgba(255,255,255,0.85);
-    }
-
-    input, textarea, select {
-      width: 100%;
-      padding: 12px 16px;
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.25);
-      border-radius: 6px;
-      color: var(--white);
-      font-size: 1rem;
-      font-family: inherit;
-      outline: none;
-      transition: border-color 0.2s;
-    }
-
-    input::placeholder, textarea::placeholder {
-      color: rgba(255,255,255,0.4);
-    }
-
-    input:focus, textarea:focus, select:focus {
-      border-color: rgba(255,255,255,0.7);
-    }
-
-    textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    select option {
-      background: var(--primary-dark);
-    }
-
-    .submit-btn {
-      width: 100%;
-      padding: 14px;
-      background: var(--primary);
-      color: var(--white);
-      border: none;
-      border-radius: 6px;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      font-family: inherit;
-      transition: background 0.2s;
-      margin-top: 8px;
-    }
-
-    .submit-btn:hover {
-      background: var(--primary-dark);
     }
 
     /* ===== フッター ===== */
@@ -609,110 +526,6 @@
       padding: 32px 24px;
       font-size: 0.875rem;
       line-height: 2;
-    }
-
-    /* ===== モーダル ===== */
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.6);
-      z-index: 2000;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      backdrop-filter: blur(2px);
-    }
-
-    .modal-overlay.open {
-      display: flex;
-      animation: fadeIn 0.2s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to   { opacity: 1; }
-    }
-
-    .modal {
-      background: var(--white);
-      border-radius: 12px;
-      max-width: 640px;
-      width: 100%;
-      max-height: 85vh;
-      overflow-y: auto;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-      animation: slideUp 0.25s ease;
-    }
-
-    @keyframes slideUp {
-      from { transform: translateY(20px); opacity: 0; }
-      to   { transform: translateY(0);    opacity: 1; }
-    }
-
-    .modal-header {
-      padding: 28px 32px 20px;
-      border-bottom: 1px solid #eee;
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 16px;
-    }
-
-    .modal-meta {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 10px;
-    }
-
-    .modal-date {
-      font-size: 0.88rem;
-      color: var(--text-light);
-    }
-
-    .modal-title {
-      font-size: 1.2rem;
-      font-weight: 700;
-      line-height: 1.4;
-      color: var(--text);
-    }
-
-    .modal-close {
-      flex-shrink: 0;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      border: none;
-      background: #f0f0f0;
-      cursor: pointer;
-      font-size: 1.1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s;
-      color: var(--text);
-    }
-
-    .modal-close:hover {
-      background: #ddd;
-    }
-
-    .modal-body {
-      padding: 28px 32px 36px;
-      font-size: 0.97rem;
-      color: var(--text);
-      line-height: 1.9;
-      white-space: pre-wrap;
-    }
-
-    .news-item {
-      cursor: pointer;
-    }
-
-    .news-item:hover .news-title {
-      color: var(--accent);
-      text-decoration: underline;
     }
 
     /* ===== スマホ対応 ===== */
@@ -735,20 +548,16 @@
       .nav-links.open { display: flex; }
       .nav-links a { padding: 12px 16px; }
 
-      .about-grid,
-      .contact-layout {
+      .about-grid {
         grid-template-columns: 1fr;
         gap: 40px;
       }
 
       .services-grid { grid-template-columns: 1fr; }
 
-      .contact-box { padding: 24px 16px; }
+      .contact-phone-box { padding: 32px 20px; }
 
-      .news-item {
-        flex-direction: column;
-        gap: 8px;
-      }
+      .contact-sub-info { gap: 28px; }
     }
   </style>
 </head>
@@ -764,7 +573,6 @@
         <li><a href="#home">ホーム</a></li>
         <li><a href="#about">会社概要</a></li>
         <li><a href="#services">事業内容</a></li>
-        <li><a href="#news">お知らせ</a></li>
         <li><a href="#contact" class="nav-cta">お問い合わせ</a></li>
       </ul>
       <button class="hamburger" id="hamburger" aria-label="メニュー">
@@ -908,104 +716,31 @@
     </div>
   </section>
 
-  <!-- お知らせ -->
-  <section id="news">
-    <div class="section-inner">
-      <p class="section-label">NEWS</p>
-      <h2 class="section-title">お知らせ</h2>
-      <p class="section-desc">最新情報をご覧ください。</p>
-      <div class="news-list">
-        <div class="news-item" data-news="0">
-          <span class="news-date">2026.06.23</span>
-          <span class="news-badge">お知らせ</span>
-          <span class="news-title">ホームページを開設いたしました</span>
-        </div>
-        <div class="news-item" data-news="1">
-          <span class="news-date">2026.06.01</span>
-          <span class="news-badge">お知らせ</span>
-          <span class="news-title">夏季の配送スケジュールについてのご案内</span>
-        </div>
-        <div class="news-item" data-news="2">
-          <span class="news-date">2026.04.01</span>
-          <span class="news-badge">採用情報</span>
-          <span class="news-title">スタッフ募集のご案内（青果加工・ピッキング・配送）</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- お問い合わせ -->
   <section id="contact">
     <div class="section-inner">
       <p class="section-label">CONTACT</p>
       <h2 class="section-title">お問い合わせ</h2>
-      <p class="section-desc">ご質問・ご相談はお気軽にどうぞ。</p>
-      <div class="contact-layout">
-        <div class="contact-info">
-          <h3>直接のお問い合わせ</h3>
-          <dl>
-            <dt>電話番号</dt>
-            <dd><a href="tel:0336571474">03-3657-1474</a></dd>
+      <p class="section-desc">お仕事のご相談・お問い合わせはお電話にて承っております。</p>
+      <div class="contact-content">
+        <div class="contact-phone-box">
+          <p class="contact-phone-label">お電話でのお問い合わせ</p>
+          <a href="tel:0336571474" class="contact-phone-number">03-3657-1474</a>
+          <p class="contact-phone-hours">受付時間：早朝〜夕方（詳細はお問い合わせください）</p>
+        </div>
+        <dl class="contact-sub-info">
+          <div>
             <dt>所在地</dt>
             <dd>〒125-0053<br>東京都葛飾区鎌倉２丁目２１−１７</dd>
+          </div>
+          <div>
             <dt>アクセス</dt>
             <dd>京成小岩駅より徒歩約8分</dd>
-            <dt>営業時間</dt>
-            <dd>早朝〜夕方（詳細はお問い合わせください）</dd>
-          </dl>
-        </div>
-        <div class="contact-box">
-          <form onsubmit="handleSubmit(event)">
-            <div class="form-group">
-              <label for="name">お名前 *</label>
-              <input type="text" id="name" placeholder="山田 太郎" required>
-            </div>
-            <div class="form-group">
-              <label for="email">メールアドレス *</label>
-              <input type="email" id="email" placeholder="example@mail.com" required>
-            </div>
-            <div class="form-group">
-              <label for="tel">電話番号</label>
-              <input type="tel" id="tel" placeholder="03-xxxx-xxxx">
-            </div>
-            <div class="form-group">
-              <label for="category">お問い合わせ種別</label>
-              <select id="category">
-                <option value="">選択してください</option>
-                <option value="processing">青果加工について</option>
-                <option value="picking">ピッキング・仕分けについて</option>
-                <option value="delivery">配送について</option>
-                <option value="recruit">採用について</option>
-                <option value="other">その他</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="message">お問い合わせ内容 *</label>
-              <textarea id="message" placeholder="お問い合わせ内容をご記入ください" required></textarea>
-            </div>
-            <button type="submit" class="submit-btn">送信する</button>
-          </form>
-        </div>
+          </div>
+        </dl>
       </div>
     </div>
   </section>
-
-  <!-- モーダル -->
-  <div class="modal-overlay" id="modalOverlay">
-    <div class="modal" id="modal" role="dialog" aria-modal="true">
-      <div class="modal-header">
-        <div>
-          <div class="modal-meta">
-            <span class="modal-date" id="modalDate"></span>
-            <span class="news-badge" id="modalBadge"></span>
-          </div>
-          <h3 class="modal-title" id="modalTitle"></h3>
-        </div>
-        <button class="modal-close" id="modalClose" aria-label="閉じる">✕</button>
-      </div>
-      <div class="modal-body" id="modalBody"></div>
-    </div>
-  </div>
 
   <!-- フッター -->
   <footer>
@@ -1068,98 +803,6 @@
     });
 
     startAuto();
-
-    // ===== お知らせモーダル =====
-    const newsData = [
-      {
-        date: '2026.06.23',
-        badge: 'お知らせ',
-        title: 'ホームページを開設いたしました',
-        body: `この度、有限会社アイダ商会の公式ホームページを開設いたしました。
-
-今後は、最新情報やスタッフ募集、季節ごとのご案内などをこちらのページで随時お知らせしてまいります。
-
-ご不明な点やご質問がございましたら、お電話またはお問い合わせフォームよりお気軽にご連絡ください。
-
-今後ともよろしくお願いいたします。`
-      },
-      {
-        date: '2026.06.01',
-        badge: 'お知らせ',
-        title: '夏季の配送スケジュールについてのご案内',
-        body: `平素より格別のご愛顧を賜り、誠にありがとうございます。
-
-夏季期間中の配送スケジュールについてご案内いたします。
-
-【夏季休業期間】
-2026年8月10日（月）〜 8月16日（日）
-
-休業期間中のご注文・お問い合わせについては、8月9日（土）までにご連絡いただきますようお願いいたします。
-
-8月17日（月）より通常業務を再開いたします。
-
-ご迷惑をおかけしますが、何卒よろしくお願いいたします。`
-      },
-      {
-        date: '2026.04.01',
-        badge: '採用情報',
-        title: 'スタッフ募集のご案内（青果加工・ピッキング・配送）',
-        body: `有限会社アイダ商会では、一緒に働くスタッフを募集しています。
-未経験の方も歓迎です。先輩スタッフが基礎からていねいにサポートします。
-
-【募集職種】
-・青果加工スタッフ
-・ピッキング・仕分けスタッフ
-・配送ドライバー
-
-【勤務時間】
-4:30〜16:00（シフト制・8時間勤務）
-
-【給与】
-月給 250,000円〜400,000円
-賞与年2回（昨年度実績：各1.5ヶ月）
-
-【待遇】
-社会保険完備・制服貸与・退職金制度（在籍3年以上）
-通勤手当全額支給・年間休日104日
-
-ご興味のある方は、お電話またはお問い合わせフォームよりご連絡ください。
-TEL：03-3657-1474`
-      }
-    ];
-
-    const overlay  = document.getElementById('modalOverlay');
-    const modalEl  = document.getElementById('modal');
-
-    function openModal(index) {
-      const d = newsData[index];
-      document.getElementById('modalDate').textContent  = d.date;
-      document.getElementById('modalBadge').textContent = d.badge;
-      document.getElementById('modalTitle').textContent = d.title;
-      document.getElementById('modalBody').textContent  = d.body;
-      overlay.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeModal() {
-      overlay.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-
-    document.querySelectorAll('.news-item').forEach(item => {
-      item.addEventListener('click', () => openModal(Number(item.dataset.news)));
-    });
-
-    document.getElementById('modalClose').addEventListener('click', closeModal);
-    overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-
-    // ===== フォーム送信（デモ用） =====
-    function handleSubmit(e) {
-      e.preventDefault();
-      alert('送信が完了しました。\n（※これはサンプルです。実際には送信されません）');
-      e.target.reset();
-    }
   </script>
 </body>
 </html>
